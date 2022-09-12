@@ -1,20 +1,138 @@
-//reset css
+/*Variable*/
+$greenMain: #588157;
+$greenLight: rgba(163, 177, 139, 0.3);
+$greenDark: #3a5a40;
+$greenDark2: #344e41;
+$bgColor: #dad7cd;
+$whiteColor: #ffffff;
+
+/*Reset css*/
 *,
 *::before,
 *::after {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-//Todo List 文字刪除線動態
+html {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 62.5%; /* 10px/16px */
+}
+
+body { 
+    background-color: $bgColor;
+}
+
+/*Todo List 文字刪除線動態*/
 .finish {
     text-decoration: line-through;
 }
 
+/*Section stylesheet*/
+.section-todo {
+    width: 60rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $greenMain;
+}
 
-//Todo List stylesheet
+/*Heading stylesheet*/
+.heading-box {
+    margin: 4rem 6rem 2rem 6rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $whiteColor;
+}
+
+.heading {
+    color: $whiteColor;
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
+
+
+/*Todo List stylesheet*/
 .list-box {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+
     &-ul {
         list-style: none;
+    }
+
+    &-li {
+        display: inline-block;
+        padding: 1.5rem 6rem;
+        width: 100%;
+        color: $whiteColor;
+        background-color: $greenLight;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+
+        > a {
+            float: right;
+            color: $whiteColor;
+            font-size: 2.5rem;
+            text-decoration: none;
+        }
+
+        > label {
+            position: relative;
+        }
+    }
+
+    &-check {
+        width: 2.5rem;
+        height: 2.5rem;
+        visibility: hidden;
+        position: absolute;
+        top: 0.7rem;
+
+        + span {
+            margin-left: 5rem;
+            letter-spacing: 3px;
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            visibility: visible;
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 2px solid $whiteColor;
+            border-radius: 3px;
+            background-color: transparent;     
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            visibility: hidden;
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 2px solid $whiteColor;
+            border-radius: 3px;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
+            background-color: transparent; 
+            background-repeat: no-repeat;
+            background-size: 13px 13px; 
+            background-position: center center;
+        }
+
+        &:checked::before {
+            visibility: hidden;
+        }
+
+        &:checked::after {
+            visibility: visible;
+        }
     }
 }

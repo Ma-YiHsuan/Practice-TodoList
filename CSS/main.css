@@ -1,14 +1,120 @@
+@charset "UTF-8";
+/*Variable*/
+/*Reset css*/
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
+html {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 62.5%; /* 10px/16px */
+}
+
+body {
+  background-color: #dad7cd;
+}
+
+/*Todo List 文字刪除線動態*/
 .finish {
   text-decoration: line-through;
 }
 
+/*Section stylesheet*/
+.section-todo {
+  width: 60rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #588157;
+}
+
+/*Heading stylesheet*/
+.heading-box {
+  margin: 4rem 6rem 2rem 6rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ffffff;
+}
+
+.heading {
+  color: #ffffff;
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+}
+
+/*Todo List stylesheet*/
+.list-box {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
 .list-box-ul {
   list-style: none;
+}
+.list-box-li {
+  display: inline-block;
+  padding: 1.5rem 6rem;
+  width: 100%;
+  color: #ffffff;
+  background-color: rgba(163, 177, 139, 0.3);
+}
+.list-box-li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.list-box-li > a {
+  float: right;
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+.list-box-li > label {
+  position: relative;
+}
+.list-box-check {
+  width: 2.5rem;
+  height: 2.5rem;
+  visibility: hidden;
+  position: absolute;
+  top: 0.7rem;
+}
+.list-box-check + span {
+  margin-left: 5rem;
+  letter-spacing: 3px;
+}
+.list-box-check::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  visibility: visible;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  background-color: transparent;
+}
+.list-box-check::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  visibility: hidden;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 13px 13px;
+  background-position: center center;
+}
+.list-box-check:checked::before {
+  visibility: hidden;
+}
+.list-box-check:checked::after {
+  visibility: visible;
 }/*# sourceMappingURL=main.css.map */

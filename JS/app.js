@@ -6,7 +6,9 @@ function addTodo(evt){
     evt.preventDefault();
     const inputText = todoInput.value;
     const li = document.createElement('li');
-    li.innerHTML=`<label><input type="checkbox"><span>${inputText}</span></label><a href="javascript:;">刪除</a>`;
+    li.classList.add('list-box-li')
+    li.innerHTML=`<label><input type="checkbox" class="list-box-check"><span>${inputText}</span></label>
+                    <a href="javascript:;"><i class="icon-basic-trashcan"></i></a>`;
     allLists.append(li);
     todoInput.value="";
 }
@@ -25,7 +27,7 @@ allLists.addEventListener('change', function(evt){
 })
 
 allLists.addEventListener('click', function(evt){
-    if(evt.target && evt.target.nodeName === 'A'){
-        evt.target.parentElement.remove();
+    if(evt.target && evt.target.nodeName === 'I'){
+        evt.target.parentElement.parentElement.remove();
     }
 })

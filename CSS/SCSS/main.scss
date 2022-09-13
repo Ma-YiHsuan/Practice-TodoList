@@ -30,13 +30,17 @@ body {
 }
 
 /*Section stylesheet*/
-.section-todo {
-    width: 60rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: $greenMain;
+.section {
+    height: 100%;
+    padding: 5rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &-todo {
+        width: 60rem;
+        background-color: $greenMain;
+    }
 }
 
 /*Heading stylesheet*/

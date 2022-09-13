@@ -24,12 +24,15 @@ body {
 }
 
 /*Section stylesheet*/
+.section {
+  height: 100%;
+  padding: 5rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 .section-todo {
   width: 60rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #588157;
 }
 

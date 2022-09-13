@@ -1,5 +1,21 @@
 @charset "UTF-8";
 /*Variable*/
+@-webkit-keyframes finishLine {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(100%);
+  }
+}
+@keyframes finishLine {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(100%);
+  }
+}
 /*Reset css*/
 *,
 *::before,
@@ -20,7 +36,20 @@ body {
 
 /*Todo List 文字刪除線動態*/
 .finish {
-  text-decoration: line-through;
+  opacity: 70%;
+}
+.finish::after {
+  content: "";
+  height: 1px;
+  width: 110%;
+  max-width: 42rem;
+  background-color: #ffffff;
+  position: absolute;
+  top: 2rem;
+  left: -4%;
+  -webkit-animation: finishLine 0.5s;
+          animation: finishLine 0.5s;
+  transform-origin: left;
 }
 
 /*Section stylesheet*/
@@ -60,7 +89,8 @@ body {
   list-style: none;
 }
 .list-box-li {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   padding: 1.5rem 6rem;
   width: 100%;
   color: #ffffff;
@@ -70,7 +100,7 @@ body {
   margin-bottom: 0.5rem;
 }
 .list-box-li > a {
-  float: right;
+  margin-top: 0.3rem;
   color: #ffffff;
   font-size: 2.5rem;
   text-decoration: none;
@@ -86,8 +116,11 @@ body {
   top: 0.7rem;
 }
 .list-box-check + span {
+  display: inline-block;
+  max-width: 40rem;
   margin-left: 5rem;
   letter-spacing: 3px;
+  position: relative;
 }
 .list-box-check::before {
   content: "";

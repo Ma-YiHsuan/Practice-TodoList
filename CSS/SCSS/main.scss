@@ -6,6 +6,15 @@ $greenDark2: #344e41;
 $bgColor: #dad7cd;
 $whiteColor: #ffffff;
 
+@keyframes finishLine {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(100%); 
+    }
+}
+
 /*Reset css*/
 *,
 *::before,
@@ -26,7 +35,20 @@ body {
 
 /*Todo List 文字刪除線動態*/
 .finish {
-    text-decoration: line-through;
+    opacity: 70%;
+
+    &::after {
+        content: "";
+        height: 1px;
+        width: 110%;
+        max-width: 42rem;
+        background-color: $whiteColor;
+        position: absolute;
+        top: 2rem;
+        left: -4%;
+        animation: finishLine .5s;
+        transform-origin: left;
+    }
 }
 
 /*Section stylesheet*/
@@ -69,7 +91,8 @@ body {
     }
 
     &-li {
-        display: inline-block;
+        display: flex;
+        justify-content: space-between;
         padding: 1.5rem 6rem;
         width: 100%;
         color: $whiteColor;
@@ -80,7 +103,7 @@ body {
         }
 
         > a {
-            float: right;
+            margin-top: 0.3rem;
             color: $whiteColor;
             font-size: 2.5rem;
             text-decoration: none;
@@ -99,8 +122,11 @@ body {
         top: 0.7rem;
 
         + span {
+            display: inline-block;
+            max-width: 40rem;
             margin-left: 5rem;
             letter-spacing: 3px;
+            position: relative;
         }
 
         &::before {

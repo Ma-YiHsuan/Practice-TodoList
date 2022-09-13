@@ -117,4 +117,38 @@ body {
 }
 .list-box-check:checked::after {
   visibility: visible;
+}
+
+/*Form stylesheet*/
+.form-box {
+  padding: 4rem 6rem;
+  font-size: 0;
+}
+.form-box-label {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+.form-box-input {
+  width: 35rem;
+  padding: 1.1rem 1rem;
+  border: none;
+  font-size: 2rem;
+  font-weight: 300;
+  font-family: inherit;
+}
+.form-box-but {
+  height: 5.1rem;
+  font-size: 2rem;
+  padding: 0 4rem;
+  text-transform: uppercase;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  vertical-align: top;
 }/*# sourceMappingURL=main.css.map */

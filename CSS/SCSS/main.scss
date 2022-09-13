@@ -136,3 +136,40 @@ body {
         }
     }
 }
+
+/*Form stylesheet*/
+.form-box {
+    padding: 4rem 6rem;
+    font-size: 0;
+
+    &-label {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: $whiteColor;
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+    }
+
+    &-input {
+        width: 35rem;
+        padding: 1.1rem 1rem;
+        border: none;
+        font-size: 2rem;
+        font-weight: 300;
+        font-family: inherit;
+    }
+
+    &-but {
+        height: 5.1rem;
+        font-size: 2rem;
+        padding: 0 4rem;
+        text-transform: uppercase;
+        border: 1px solid $whiteColor;
+        color: $whiteColor;
+        background-color: transparent;
+        margin-left: .5rem;
+        cursor:pointer;
+        vertical-align: top;
+    }
+}

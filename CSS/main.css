@@ -114,6 +114,7 @@ body {
   visibility: hidden;
   position: absolute;
   top: 0.7rem;
+  cursor: pointer;
 }
 .list-box-check + span {
   display: inline-block;

@@ -7,199 +7,200 @@ $bgColor: #dad7cd;
 $whiteColor: #ffffff;
 
 @keyframes finishLine {
-    0% {
-        transform: scaleX(0);
-    }
-    100% {
-        transform: scaleX(100%); 
-    }
+	0% {
+		transform: scaleX(0);
+	}
+	100% {
+		transform: scaleX(100%);
+	}
 }
 
 /*Reset css*/
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 html {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 62.5%; /* 10px/16px */
+	font-family: 'Noto Sans TC', sans-serif;
+	font-size: 62.5%; /* 10px/16px */
 }
 
-body { 
-    background-color: $bgColor;
+body {
+	background-color: $bgColor;
 }
 
 /*Todo List 文字刪除線動態*/
 .finish {
-    opacity: 70%;
+	opacity: 70%;
 
-    &::after {
-        content: "";
-        height: 1px;
-        width: 110%;
-        max-width: 42rem;
-        background-color: $whiteColor;
-        position: absolute;
-        top: 2rem;
-        left: -4%;
-        animation: finishLine .5s;
-        transform-origin: left;
-    }
+	&::after {
+		content: '';
+		height: 1px;
+		width: 110%;
+		max-width: 42rem;
+		background-color: $whiteColor;
+		position: absolute;
+		top: 2rem;
+		left: -4%;
+		animation: finishLine 0.5s;
+		transform-origin: left;
+	}
 }
 
 /*Section stylesheet*/
 .section {
-    height: 100%;
-    padding: 5rem 0;
-    position: relative;
-    display: flex;
-    justify-content: center;
+	height: 100%;
+	padding: 5rem 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
 
-    &-todo {
-        width: 60rem;
-        background-color: $greenMain;
-    }
+	&-todo {
+		width: 60rem;
+		background-color: $greenMain;
+	}
 }
 
 /*Heading stylesheet*/
 .heading-box {
-    margin: 4rem 6rem 2rem 6rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid $whiteColor;
+	margin: 4rem 6rem 2rem 6rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid $whiteColor;
 }
 
 .heading {
-    color: $whiteColor;
-    font-size: 5rem;
-    font-weight: 300;
-    letter-spacing: 4px;
+	color: $whiteColor;
+	font-size: 5rem;
+	font-weight: 300;
+	letter-spacing: 4px;
 }
-
 
 /*Todo List stylesheet*/
 .list-box {
-    margin: 1rem 0;
-    font-size: 2.5rem;
-    font-weight: 300;
+	margin: 1rem 0;
+	font-size: 2.5rem;
+	font-weight: 300;
 
-    &-ul {
-        list-style: none;
-    }
+	&-ul {
+		list-style: none;
+	}
 
-    &-li {
-        display: flex;
-        justify-content: space-between;
-        padding: 1.5rem 6rem;
-        width: 100%;
-        color: $whiteColor;
-        background-color: $greenLight;
+	&-li {
+		display: flex;
+		justify-content: space-between;
+		padding: 1.5rem 6rem;
+		width: 100%;
+		color: $whiteColor;
+		background-color: $greenLight;
 
-        &:not(:last-child) {
-            margin-bottom: .5rem;
-        }
+		&:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
 
-        > a {
-            margin-top: 0.3rem;
-            color: $whiteColor;
-            font-size: 2.5rem;
-            text-decoration: none;
-        }
+		> a {
+			margin-top: 0.3rem;
+			color: $whiteColor;
+			font-size: 2.5rem;
+			text-decoration: none;
+		}
 
-        > label {
-            position: relative;
-        }
-    }
+		> label {
+			position: relative;
+		}
+	}
 
-    &-check {
-        width: 2.5rem;
-        height: 2.5rem;
-        visibility: hidden;
-        position: absolute;
-        top: 0.7rem;
+	&-check {
+		width: 2.5rem;
+		height: 2.5rem;
+		visibility: hidden;
+		position: absolute;
+		top: 0.7rem;
+		cursor: pointer;
 
-        + span {
-            display: inline-block;
-            max-width: 40rem;
-            margin-left: 5rem;
-            letter-spacing: 3px;
-            position: relative;
-        }
+		//TodoList text style
+		+ span {
+			display: inline-block;
+			max-width: 40rem;
+			margin-left: 5rem;
+			letter-spacing: 3px;
+			position: relative;
+		}
 
-        &::before {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            visibility: visible;
-            width: 2.5rem;
-            height: 2.5rem;
-            border: 2px solid $whiteColor;
-            border-radius: 3px;
-            background-color: transparent;     
-        }
+		&::before {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			visibility: visible;
+			width: 2.5rem;
+			height: 2.5rem;
+			border: 2px solid $whiteColor;
+			border-radius: 3px;
+			background-color: transparent;
+		}
 
-        &::after {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            visibility: hidden;
-            width: 2.5rem;
-            height: 2.5rem;
-            border: 2px solid $whiteColor;
-            border-radius: 3px;
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
-            background-color: transparent; 
-            background-repeat: no-repeat;
-            background-size: 13px 13px; 
-            background-position: center center;
-        }
+		&::after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			visibility: hidden;
+			width: 2.5rem;
+			height: 2.5rem;
+			border: 2px solid $whiteColor;
+			border-radius: 3px;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+');
+			background-color: transparent;
+			background-repeat: no-repeat;
+			background-size: 13px 13px;
+			background-position: center center;
+		}
 
-        &:checked::before {
-            visibility: hidden;
-        }
+		&:checked::before {
+			visibility: hidden;
+		}
 
-        &:checked::after {
-            visibility: visible;
-        }
-    }
+		&:checked::after {
+			visibility: visible;
+		}
+	}
 }
 
 /*Form stylesheet*/
 .form-box {
-    padding: 4rem 6rem;
-    font-size: 0;
+	padding: 4rem 6rem;
+	font-size: 0;
 
-    &-label {
-        display: block;
-        font-size: 2.5rem;
-        font-weight: 300;
-        color: $whiteColor;
-        letter-spacing: 3px;
-        margin-bottom: 1rem;
-    }
+	&-label {
+		display: block;
+		font-size: 2.5rem;
+		font-weight: 300;
+		color: $whiteColor;
+		letter-spacing: 3px;
+		margin-bottom: 1rem;
+	}
 
-    &-input {
-        width: 35rem;
-        padding: 1.1rem 1rem;
-        border: none;
-        font-size: 2rem;
-        font-weight: 300;
-        font-family: inherit;
-    }
+	&-input {
+		width: 35rem;
+		padding: 1.1rem 1rem;
+		border: none;
+		font-size: 2rem;
+		font-weight: 300;
+		font-family: inherit;
+	}
 
-    &-but {
-        height: 5.1rem;
-        font-size: 2rem;
-        padding: 0 4rem;
-        text-transform: uppercase;
-        border: 1px solid $whiteColor;
-        color: $whiteColor;
-        background-color: transparent;
-        margin-left: .5rem;
-        cursor:pointer;
-        vertical-align: top;
-    }
+	&-but {
+		height: 5.1rem;
+		font-size: 2rem;
+		padding: 0 4rem;
+		text-transform: uppercase;
+		border: 1px solid $whiteColor;
+		color: $whiteColor;
+		background-color: transparent;
+		margin-left: 0.5rem;
+		cursor: pointer;
+		vertical-align: top;
+	}
 }

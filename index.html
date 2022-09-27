@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-hant">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,11 @@
     <title>My Todo List</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/icon-font.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>   
+
+<body>
     <section class="section">
         <div class="section-todo">
             <div class="heading-box">
@@ -17,21 +20,12 @@
             </div>
             <div class="list-box">
                 <ul id="todoList" class="list-box-ul">
-                    <li class="list-box-li">
-                        <label><input type="checkbox" class="list-box-check"><span>買鮮奶</span></label>
-                        <a href="javascript:;"><i class="icon-basic-trashcan"></i></a>
-                    </li>
-                    <li class="list-box-li">
-                        <label><input type="checkbox" class="list-box-check"><span>打掃房間</span></label>
-                        <a href="javascript:;"><i class="icon-basic-trashcan"></i></a>
-                    </li>
-                    <li class="list-box-li">
-                        <label><input type="checkbox" class="list-box-check"><span>遛狗</span></label>
-                        <a href="javascript:;"><i class="icon-basic-trashcan"></i></a>
-                    </li>
                 </ul>
             </div>
             <div class="form-box">
+                <div>
+                    <input type="checkbox" id="toggle">
+                </div>
                 <form id="addItem">
                     <label for="todoInput" class="form-box-label">Add to the todo list</label>
                     <input id="todoInput" type="text" class="form-box-input">
@@ -40,6 +34,8 @@
             </div>
         </div>
     </section>
+    <!-- <script src="./JS/origin.js"></script> -->
     <script src="./JS/app.js"></script>
 </body>
+
 </html>

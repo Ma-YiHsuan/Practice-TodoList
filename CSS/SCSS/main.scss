@@ -170,8 +170,64 @@ body {
 
 /*Form stylesheet*/
 .form-box {
-	padding: 4rem 6rem;
+	padding: 1rem 6rem 4rem 6rem;
 	font-size: 0;
+
+	&-toggle {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		font-size: 1.6rem;
+		font-weight: 100;
+		color: $whiteColor;
+		letter-spacing: 3px;
+		margin-bottom: 2.5rem;
+	}
+
+	&-check {
+		width: 1.5rem;
+		height: 1.5rem;
+		visibility: hidden;
+		position: relative;
+		cursor: pointer;
+		margin-left: 0.5rem;
+
+		&::before {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			visibility: visible;
+			width: 1.5rem;
+			height: 1.5rem;
+			border: 1.5px solid $whiteColor;
+			border-radius: 3px;
+			background-color: transparent;
+		}
+
+		&::after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			visibility: hidden;
+			width: 1.5rem;
+			height: 1.5rem;
+			// border: 1px solid $whiteColor;
+			border-radius: 3px;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+');
+			background-color: $greenDark2;
+			background-repeat: no-repeat;
+			background-size: 9px 9px;
+			background-position: center center;
+		}
+
+		&:checked::before {
+			visibility: hidden;
+		}
+
+		&:checked::after {
+			visibility: visible;
+		}
+	}
 
 	&-label {
 		display: block;
@@ -202,5 +258,10 @@ body {
 		margin-left: 0.5rem;
 		cursor: pointer;
 		vertical-align: top;
+		transition: background-color 0.3s ease-out;
+
+		&:hover {
+			background-color: $greenDark;
+		}
 	}
 }
